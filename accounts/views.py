@@ -8,7 +8,7 @@ def signup(request):
         username = request.POST['username']
         password = request.POST['password']
         role = request.POST['role']
-        user = CustomUser.objects.create_user(username=username, password=password, role=role)
+        username = CustomUser.objects.create_user(username=username, password=password, role=role)
         messages.success(request, "Account created successfully!")
         return redirect('login')
     return render(request, 'signup.html')
